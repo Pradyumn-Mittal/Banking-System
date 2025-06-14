@@ -1,15 +1,10 @@
 from abc import ABC, abstractmethod
 
 class Account(ABC):
-
-    _account_number = ""
-    _balance = 0
-    _account_holder_id = ""
-
     def __init__(self, account_number: str, account_holder_id: str, initial_balance: float = 0.0):
-        self._account_number = account_number
-        self._balance = initial_balance
-        self._account_holder_id = account_holder_id
+        self._account_number:str = account_number
+        self._balance:float = initial_balance
+        self._account_holder_id:str = account_holder_id
 
     @property
     def account_number(self):
