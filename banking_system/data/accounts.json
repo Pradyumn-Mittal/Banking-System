@@ -2,7 +2,7 @@
     "c20e1e56-171a-46d9-864b-05d19444fa6d": {
         "account_number": "c20e1e56-171a-46d9-864b-05d19444fa6d",
         "account_holder_id": "61fecfd0-49fe-4bc5-be6e-11b1aaa242cc",
-        "balance": 80500.0,
+        "balance": 40500.0,
         "type": "savings",
         "interest_rate": 10.0
     }

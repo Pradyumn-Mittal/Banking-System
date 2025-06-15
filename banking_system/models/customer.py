@@ -35,13 +35,13 @@ class Customer:
             self._account_numbers.remove(account_number)
 
     def display_details(self) -> str:
-        return f"Customer ID: {self._customer_id}, Name: {self._name}, Address: {self._address}, No. of Acc.: {len(self._account_numbers)-1}"
+        return f"Customer ID: {self._customer_id}, Name: {self._name}, Address: {self._address}, No. of Acc.: {len(self._account_numbers) - 1}"
 
     def to_dict(self) -> dict:
         details = {
             "customer_id": self._customer_id,
-            "name":self._name,
-            "address":self._address,
-            "account_numbers":self._account_numbers
+            "name": self._name,
+            "address": self._address,
+            "account_numbers": self._account_numbers
         }
         return details

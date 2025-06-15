@@ -1,8 +1,9 @@
 import multiprocessing
 import time
 
+
 class Loading:
-    def __init__(self)->None:
+    def __init__(self) -> None:
         self.message = ''
         self.speed = 0.1
 
@@ -38,4 +39,3 @@ class Loading:
         self.start()
         time.sleep(delay)
         self.stop()
-

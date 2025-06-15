@@ -2,10 +2,11 @@ import json
 import os
 import uuid
 
-from .customer import Customer
 from .account import Account
-from .saving_account import SavingAccount
 from .checking_account import CheckingAccount
+from .customer import Customer
+from .saving_account import SavingAccount
+
 
 class Bank:
     def __init__(self, customer_file='data/customers.json', account_file='data/accounts.json'):
@@ -70,7 +71,8 @@ class Bank:
         self.__save_data()
         return True
 
-    def create_account(self, customer_id: str, account_type: str, initial_balance: float = 0.0, **kwargs) -> Account | None:
+    def create_account(self, customer_id: str, account_type: str, initial_balance: float = 0.0,
+                       **kwargs) -> Account | None:
         if customer_id not in self._customers:
             return None
 

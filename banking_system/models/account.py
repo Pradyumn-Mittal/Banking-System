@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
 
+
 class Account(ABC):
     def __init__(self, account_number: str, account_holder_id: str, initial_balance: float = 0.0):
-        self._account_number:str = account_number
-        self._balance:float = initial_balance
-        self._account_holder_id:str = account_holder_id
+        self._account_number: str = account_number
+        self._balance: float = initial_balance
+        self._account_holder_id: str = account_holder_id
 
     @property
     def account_number(self):
@@ -23,7 +24,7 @@ class Account(ABC):
         pass
 
     @abstractmethod
-    def withdraw(self, amount:float) -> bool:
+    def withdraw(self, amount: float) -> bool:
         pass
 
     def display_details(self) -> str:
@@ -31,8 +32,8 @@ class Account(ABC):
 
     def to_dict(self) -> dict:
         return {
-            "account_number":self._account_number,
-            "account_holder_id":self._account_holder_id,
-            "balance":self._balance,
-            "type":"generic"
+            "account_number": self._account_number,
+            "account_holder_id": self._account_holder_id,
+            "balance": self._balance,
+            "type": "generic"
         }

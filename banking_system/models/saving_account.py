@@ -1,7 +1,9 @@
 from .account import Account
 
+
 class SavingAccount(Account):
-    def __init__(self, account_number: str, account_holder_id: str, initial_balance: float = 0.0, interest_rate: float = 0.01):
+    def __init__(self, account_number: str, account_holder_id: str, initial_balance: float = 0.0,
+                 interest_rate: float = 0.01):
         super().__init__(account_number, account_holder_id, initial_balance)
         self._interest_rate = interest_rate
 
@@ -19,7 +21,7 @@ class SavingAccount(Account):
             return True
         return False
 
-    def withdraw(self, amount:float):
+    def withdraw(self, amount: float):
         if 0.0 < amount < self._balance:
             self._balance -= amount
             return True
@@ -36,6 +38,6 @@ class SavingAccount(Account):
         data = super().to_dict()
         data.update({
             "interest_rate": self._interest_rate,
-            "type":"savings"
+            "type": "savings"
         })
         return data

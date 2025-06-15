@@ -1,7 +1,9 @@
 import uuid
+
+from loading.loading import Loading
 from models.bank import Bank
 from models.customer import Customer
-from loading.loading import Loading
+
 
 def main():
     bank = Bank()
@@ -113,12 +115,13 @@ def main():
 
         elif choice == '0':
             load.loading_anim("Exiting.....", 5)
-            break
+            return
 
         else:
             print("Invalid choice. Please try again.")
 
         load.loading_anim("Going Back to Main Menu..........", 10)
+
 
 if __name__ == "__main__":
     main()

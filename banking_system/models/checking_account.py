@@ -1,7 +1,9 @@
 from .account import Account
 
+
 class CheckingAccount(Account):
-    def __init__(self, account_number: str, account_holder_id: str, initial_balance: float = 0.0, overdraft_limit: float = 0.0):
+    def __init__(self, account_number: str, account_holder_id: str, initial_balance: float = 0.0,
+                 overdraft_limit: float = 0.0):
         super().__init__(account_number, account_holder_id, initial_balance)
         self._overdraft_limit = overdraft_limit
 
@@ -19,8 +21,8 @@ class CheckingAccount(Account):
             return True
         return False
 
-    def withdraw(self, amount:float) -> bool:
-        if 0.0 < amount and  self._balance - amount >= -self._overdraft_limit:
+    def withdraw(self, amount: float) -> bool:
+        if 0.0 < amount and self._balance - amount >= -self._overdraft_limit:
             self._balance -= amount
             return True
         return False
@@ -33,6 +35,6 @@ class CheckingAccount(Account):
         data = super().to_dict()
         data.update({
             "overdraft_limit": self._overdraft_limit,
-            "type":"checking"
+            "type": "checking"
         })
         return data
