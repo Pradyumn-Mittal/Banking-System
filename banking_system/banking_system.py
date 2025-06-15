@@ -1,11 +1,15 @@
 import uuid
 from models.bank import Bank
 from models.customer import Customer
+from loading.loading import Loading
 
 def main():
     bank = Bank()
 
     while True:
+
+        load = Loading()
+
         print("\nBanking System Menu:")
         print("1. Add Customer")
         print("2. Remove Customer")
@@ -22,6 +26,7 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == '1':
+            print()
             name = input("Enter customer name: ")
             address = input("Enter customer address: ")
             customer_id = str(uuid.uuid4())
@@ -32,6 +37,7 @@ def main():
                 print("Customer already exists.")
 
         elif choice == '2':
+            print()
             customer_id = input("Enter customer ID to remove: ")
             if bank.remove_customer(customer_id):
                 print("Customer removed successfully.")
@@ -39,6 +45,7 @@ def main():
                 print("Customer not found or has associated accounts.")
 
         elif choice == '3':
+            print()
             customer_id = input("Enter customer ID: ")
             account_type = input("Enter account type (savings/checking): ")
             initial_balance = float(input("Enter initial balance: "))
@@ -54,6 +61,7 @@ def main():
                 print("Failed to create account.")
 
         elif choice == '4':
+            print()
             account_number = input("Enter account number: ")
             amount = float(input("Enter amount to deposit: "))
             if bank.deposit(account_number, amount):
@@ -62,6 +70,7 @@ def main():
                 print("Failed to deposit.")
 
         elif choice == '5':
+            print()
             account_number = input("Enter account number: ")
             amount = float(input("Enter amount to withdraw: "))
             if bank.withdraw(account_number, amount):
@@ -70,6 +79,7 @@ def main():
                 print("Failed to withdraw.")
 
         elif choice == '6':
+            print()
             from_acc_num = input("Enter source account number: ")
             to_acc_num = input("Enter destination account number: ")
             amount = float(input("Enter amount to transfer: "))
@@ -79,6 +89,7 @@ def main():
                 print("Failed to transfer funds.")
 
         elif choice == '7':
+            print()
             customer_id = input("Enter customer ID: ")
             accounts = bank.get_customer_accounts(customer_id)
             if accounts:
@@ -88,21 +99,26 @@ def main():
                 print("No accounts found for this customer.")
 
         elif choice == '8':
+            print()
             bank.apply_all_interest()
             print("Interest applied to all savings accounts.")
 
         elif choice == '9':
+            print()
             bank.display_all_customers()
 
         elif choice == '10':
+            print()
             bank.display_all_accounts()
 
         elif choice == '0':
-            print("Exiting...")
+            load.loading_anim("Exiting.....", 5)
             break
 
         else:
             print("Invalid choice. Please try again.")
+
+        load.loading_anim("Going Back to Main Menu..........", 10)
 
 if __name__ == "__main__":
     main()
