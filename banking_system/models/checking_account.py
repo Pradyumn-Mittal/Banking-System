@@ -1,9 +1,8 @@
-from abc import ABC
-from account import Account
+from .account import Account
 
-class CheckingAccount(Account, ABC):
+class CheckingAccount(Account):
     def __init__(self, account_number: str, account_holder_id: str, initial_balance: float = 0.0, overdraft_limit: float = 0.0):
-        super().__init__(self)
+        super().__init__(account_number, account_holder_id, initial_balance)
         self._overdraft_limit = overdraft_limit
 
     @property

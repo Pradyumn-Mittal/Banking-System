@@ -1,9 +1,8 @@
-from abc import ABC
-from account import Account
+from .account import Account
 
-class SavingAccount(Account, ABC):
+class SavingAccount(Account):
     def __init__(self, account_number: str, account_holder_id: str, initial_balance: float = 0.0, interest_rate: float = 0.01):
-        super().__init__(self)
+        super().__init__(account_number, account_holder_id, initial_balance)
         self._interest_rate = interest_rate
 
     @property
