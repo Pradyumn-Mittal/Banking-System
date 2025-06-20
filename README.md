@@ -56,7 +56,8 @@ This project demonstrates effective use of OOP in Python:
 
 ## 📸 Screenshots
 
-> *(You can add terminal screenshots or a demo GIF here.)*
+![image](https://github.com/user-attachments/assets/b8067f99-7d4b-4b11-9598-eee7673a89c7)
+
 
 ## 🧪 Sample Use Case
 
